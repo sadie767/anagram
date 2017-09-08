@@ -1,8 +1,10 @@
-require('rspec')
-require('anagram')
+require "rspec"
+require "anagram"
 
-describe('anagram') do
-  it(check inputted words as anagrams) do
-    expect("bury ruby").to(eq(true))
+describe("#anagram") do
+  
+  it("check inputted words as anagrams") do
+    input = Mix.new("ruby", "bury")
+    expect(input.check).to(eq("Anagram!"))
   end
 end

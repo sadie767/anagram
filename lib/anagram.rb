@@ -5,21 +5,15 @@ class Mix
     @input2 = input2
   end
   def check
-    inputted_word1 = @input1
-    inputted_word2 = @input2
+    input_word1 = @input1
+    input_word2 = @input2
     arrays1 = []
     arrays2 = []
-    inputted_word1.split("")
-    arrays1.push(inputted_word1)
-    inputted_word2.split("")
-    arrays2.push(inputted_word2)
-    x = 0
-    while x < 1 do
-    if arrays1.chars.sort.join == arrays2.chars.sort.join
-      puts 'array'
-    else puts 'not array'
+    arrays1.push(input_word1.split("").sort)
+    arrays2.push(input_word2.split("").sort)
+    if arrays1 === arrays2
+      return "Anagram!"
+    else return "Not an anagram!"
     end
-    x += 1
-  end
   end
 end
