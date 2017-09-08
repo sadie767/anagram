@@ -15,4 +15,8 @@ describe("#anagram") do
     input2 = Mix.new("won", "now")
     expect(input2.check).to(eq("This is an anagram & this is a palindrome!"))
   end
+  it("tells user to input actual words") do
+    input3 = Mix.new("bbb", "now")
+    expect(input3.check).to(eq("You need to input actual words!"))
+  end
 end
