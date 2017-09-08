@@ -9,8 +9,8 @@ class Mix
     input_word2 = @input2
     arrays1 = []
     arrays2 = []
-    arrays1.push(input_word1.split("").sort)
-    arrays2.push(input_word2.split("").sort)
+    arrays1.push(input_word1.upcase.split("").sort)
+    arrays2.push(input_word2.upcase.split("").sort)
     if arrays1 === arrays2
       return "Anagram!"
     else return "Not an anagram!"
