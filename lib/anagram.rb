@@ -7,34 +7,35 @@ class Mix
   print "Enter two words"
 
   def check
-    @input1 = input_letter1.upcase.delete(" ").split("").sort
-    @input2 = input_letter2.upcase.delete(" ").split("").sort
+    letter1 = @input1
+    letter2 = @input2
+
+    letter1.upcase.split("")
+    letter2.upcase.split("")
 
     arrays1 = []
     arrays2 = []
 
-    @arrays1 = arrays1.push(input_letter1)
-    @arrays2 = arrays2.push(input_letter2)
+    arrays1.sort()
+    arrays2.sort()
 
+    trashes = []
 
-    if @input1 === @input2.reverse && @input1 === @input2.reverse
+    arrays1.push(letter1)
+    arrays2.push(letter2)
+
+    if letter1 === letter2.reverse && letter2 === letter1.reverse
        "This is an anagram & this is a palindrome!"
-    elsif @arrays1 === @arrays2
+    elsif arrays1 === arrays2
        "This is an anagram!"
     else  "This is not an anagram nor palindrome!"
     end
-  end
+    return letter1
+    both_entered = arrays1.concat(arrays2)
 
-  def vowel
-    @input1 = check_vowel1.upcase.split("")
-    @input2 = check_vowel2.upcase.split("")
-    both_entered = @input1.concat(@input2)
-
-    if @input1.include?("A") || @input1.include?("E") || @input1.include?("I") || @input1.include?("O") || @input1.include?("U") || @input1s.include?("Y") || @input1.include?("A") | @input1.include?("E") || @input2.include?("I") || @input2.include?("O") || @input2.include?("U") || @input2.include?("Y")
-        @input1.lowcase.join.check()
-        @input2..lowcase.join.check()
+    if both_entered.include?("A") || both_entered.include?("E") || both_entered.include?("I") || both_entered.include?("O") || both_entered.include?("U") || both_entered.include?("Y")
+        trashes.push(both_entered)
     else "Please enter a real word!"
     end
   end
-
 end
