@@ -1,31 +1,32 @@
 #!/usr/bin/env ruby
 class Mix
   def initialize(input1, input2)
-    @input1 = input1.upcase.delete(" ", ".", ",").split("")
-    @input2 = input2.upcase.delete(" ", ".", ",").split("")
+    @input1 = input1
+    @input2 = input2
+    @input1_array1 = input1.upcase.delete(" ", ".", ",").split("").sort!
+    @input2_array2 = input2.upcase.delete(" ", ".", ",").split("").sort!
+  end
+
+  def word_checker?
+    if @input1_array1.none?("A") || @input1_array1.none?("E") || @input1_array1.none?("I") || @input1_array1.none?("O") || @input1_array1.none?("U") || @input1_array1.none?("Y") ||
+    @input2_array2.none?("A") || @input2_array2.none?("E") || @input2_array2.none?("I") || @input2_array2.none?("O") || @input2_array2.none?("U") || @input2_array2.none?("Y")
+    true
+  else
+    false
+    end
   end
 
   def check
-    arrays1 = []
-    arrays2 = []
-
-    arrays1.sort()
-    arrays2.sort()
-
-    if @input1 === @input2.reverse && @input2 === @input1.reverse
-      # @input1.include?("A") || @input1.include?("E") || @input1.include?("I") || @input1.include?("O") || @input1.include?("U") || @input1.include?("Y") ||
-      # @input2.include?("A") || @input2.include?("E") || @input2.include?("I") || @input2.include?("O") || @input2.include?("U") || @input2.include?("Y")
-      return @input
+    if word_checker? == true
+      "Please enter a real word"
+    elsif @input1 === @input2.reverse
        "This is an anagram & this is a palindrome!"
-    elsif arrays1 === arrays2 &&
-      @input1.include?("A") || @input1.include?("E") || @input1.include?("I") || @input1.include?("O") || @input1.include?("U") || @input1.include?("Y") ||
-      @input2.include?("A") || @input2.include?("E") || @input2.include?("I") || @input2.include?("O") || @input2.include?("U") || @input2.include?("Y")
+    elsif @input1_array1 === @input2_array2
        "This is an anagram!"
-    elsif @input1.include?("A") || @input1.include?("E") ||     @input1.include?("I") || @input1.include?("O") || @input1.include?("U") || @input1.include?("Y") ||
-     @input2.include?("A") || @input2.include?("E") || @input2.include?("I") || @input2.include?("O") || @input2.include?("U") || @input2.include?("Y")
-       "This is not an anagram nor palindrome!"
-     else
-       "Please enter a real word!"
+     elsif @input1_array1 != @input2_array2
+      "This is an antigram"
+    else
+      "This is neither an anagram nor palindrome"
     end
   end
 end
