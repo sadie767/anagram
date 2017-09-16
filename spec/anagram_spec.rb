@@ -17,6 +17,6 @@ describe("#anagram") do
   end
   it("tells user to input actual words") do
     input3 = Mix.new("bbb", "now")
-    expect(input3.check).to(eq("You need to input actual words!"))
+    expect(input3.check).to(eq("Please enter a real word!"))
   end
 end
